@@ -1,0 +1,56 @@
+// font-size
+$bass-font-size: 14px;
+$font-sizes: (
+  //10px
+    xs: 10px,
+  //12px
+    sm: 12px,
+  //14px
+    md: 14px,
+  //16px
+    lg: 16px,
+  //18px
+    xl: 18px
+);
+// color
+$colors: (
+  'withe': #fff,
+  'dark': #333,
+  'black': #000,
+  'grey': #999,
+);
+//flex
+$flex-jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+$flex-ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+);
+//margin padding
+$base-spacing-type: 10px;
+$spacing-types: (
+  m: margin,
+  p: padding,
+);
+$spacing-directions: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+);
+$spacing-sizes: (
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  5x: 0.5,
+);

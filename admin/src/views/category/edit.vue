@@ -4,12 +4,7 @@
     <el-form label-width="80px">
       <el-form-item label="上级分类">
         <el-select v-model="form.parent" clearable>
-          <el-option
-            v-for="(item,index) in parents"
-            :label="item.name"
-            :value="item._id"
-            :key="index"
-          ></el-option>
+          <el-option v-for="(item,index) in parents" :label="item.name" :value="item._id" :key="index"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="名称">
@@ -19,10 +14,12 @@
         <el-button type="primary" @click="save()">提交</el-button>
       </el-form-item>
     </el-form>
+    <div ref="test"></div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   data() {
     return {
@@ -38,6 +35,21 @@ export default {
     this.fetchCategoryList()
     this.form._id && this.init()
     console.log(this.$route)
+    //通过vue.extend 构造器动态注册组件
+    import('@/components/HelloWorld.vue').then(component => {
+      const test = Vue.extend(component.default)
+      console.log(new test())
+      new test({
+        data() {
+          return {
+            msg1: 'cg1'
+          }
+        },
+        propsData: {
+          msg: 'cg'
+        }
+      }).$mount(this.$refs.test)
+    })
   },
   methods: {
     fetchCategoryList() {
