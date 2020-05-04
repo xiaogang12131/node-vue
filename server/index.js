@@ -20,6 +20,12 @@ require('./plugins/db')(app)
 require('./routes/admin')(app)
 require('./routes/admin/login')(app)
 
+// 错误处理
+app.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).send({
+    message: err.message
+  })
+})
 app.listen(3000, () => {
   console.log('http://localhost:3000')
 })

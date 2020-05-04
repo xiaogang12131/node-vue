@@ -27,11 +27,4 @@ module.exports = (app) => {
       token
     })
   })
-
-  // 错误处理
-  app.use((err, req, res, next) => {
-    res.status(err.statusCode || 500).send({
-      message: err.message
-    })
-  })
 }

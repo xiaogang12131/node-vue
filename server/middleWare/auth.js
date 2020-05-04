@@ -9,6 +9,11 @@ module.exports = (options) => {
       .pop()
     assert(token, 401, '请提供jwt token')
     console.log(jwt.verify(token, req.app.get('secret')))
+    try {
+
+    } catch (e) {
+      res = 'err';
+    }
     const {
       id
     } = jwt.verify(token, req.app.get('secret'))
